@@ -1,0 +1,99 @@
+[gd_scene load_steps=3 format=3 uid="uid://41pkqdixu7rn"]
+
+[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_1f8wh"]
+[ext_resource type="FontFile" uid="uid://bb3fjyk4srnge" path="res://assets/fonts/HarryP.ttf" id="1_ufdac"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1f8wh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 579.0
+offset_top = 331.0
+offset_right = 1341.0
+offset_bottom = 749.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOver" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 811.5
+offset_top = 400.0
+offset_right = 1108.5
+offset_bottom = 488.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ufdac")
+theme_override_font_sizes/font_size = 64
+text = "GAME OVER"
+
+[node name="Player1" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+offset_left = 811.5
+offset_top = 543.0
+offset_right = 1108.5
+offset_bottom = 631.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ufdac")
+theme_override_font_sizes/font_size = 64
+text = "Player 1 Wins!"
+horizontal_alignment = 1
+
+[node name="Player2" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+offset_left = 811.5
+offset_top = 543.0
+offset_right = 1108.5
+offset_bottom = 631.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ufdac")
+theme_override_font_sizes/font_size = 64
+text = "Player 2 Wins!"
+horizontal_alignment = 1
+
+[node name="Tie" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+offset_left = 811.5
+offset_top = 543.0
+offset_right = 1108.5
+offset_bottom = 631.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ufdac")
+theme_override_font_sizes/font_size = 64
+text = "Tie!"
+horizontal_alignment = 1
+
+[node name="PlayAgainButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 870.0
+offset_top = 671.0
+offset_right = 1050.0
+offset_bottom = 728.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ufdac")
+theme_override_font_sizes/font_size = 48
+text = "Play Again?"

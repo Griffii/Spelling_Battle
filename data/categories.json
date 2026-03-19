@@ -1,0 +1,20 @@
+{
+	"animals": ["Animals", "動物"],
+	"weekdays": ["Days of the week", "曜日"],
+	"food": ["Food", "食べ物"],
+	"drinks": ["Drinks", "飲み物"],
+	"colors": ["Colors", "色"],
+	"roundthings": ["Things that are round", "丸いもの"],
+	"thingsonface": ["Something on your face", "顔についているもの"],
+	"pencilcase": ["Things in a pencil case", "筆箱の中のもの"],
+	"kitchen": ["Things in your kitchen", "台所にあるもの"],
+	"instruments": ["Instruments", "楽器"],
+	"sports": ["Sports", "スポーツ"],
+	"countries": ["Countries", "国"],
+	"months": ["Months", "月"],
+	"holidays": ["Holidays", "祝日"],
+	"shapes": ["Shapes", "形"],
+	"beachthings": ["Things at the beach", "ビーチにあるもの"],
+	"bathroom": ["Things in the bathroom", "トイレにあるもの"],
+	"verbs": ["Verbs [動詞]", ""]
+}

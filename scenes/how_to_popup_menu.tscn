@@ -1,0 +1,157 @@
+[gd_scene load_steps=9 format=3 uid="uid://k7ldnon3irxj"]
+
+[ext_resource type="Texture2D" uid="uid://cqe65ebwug8uk" path="res://assets/ui/panel-transparent-border-004.png" id="1_x4e22"]
+[ext_resource type="FontFile" uid="uid://d16pn52oksxr3" path="res://assets/fonts/BadComic-Regular.ttf" id="2_5ya0t"]
+[ext_resource type="Texture2D" uid="uid://dhi86olb4hnrf" path="res://assets/ui/divider-fade-005.png" id="3_m5cn1"]
+[ext_resource type="FontFile" uid="uid://ca01hpq1wc688" path="res://assets/fonts/ud-digi-kyokasho-n-b.ttf" id="4_vdmri"]
+[ext_resource type="Texture2D" uid="uid://horfgui47ycw" path="res://assets/ui/silver_button_pressed.png" id="5_0wkmy"]
+[ext_resource type="Texture2D" uid="uid://bjnbr8bhhcwlr" path="res://assets/ui/silver_button_normal.png" id="6_jfycs"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_05cob"]
+texture = ExtResource("5_0wkmy")
+texture_margin_left = 4.0
+texture_margin_top = 5.0
+texture_margin_right = 4.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a2ogf"]
+texture = ExtResource("6_jfycs")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 6.0
+
+[node name="HowToPopupMenu" type="Node2D"]
+
+[node name="HelpCanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HowToBlocker" type="ColorRect" parent="HelpCanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.196078, 0.196078, 0.196078, 0.392157)
+
+[node name="HowToContainer" type="MarginContainer" parent="HelpCanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -350.0
+offset_right = 600.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="HelpCanvasLayer/HowToContainer"]
+self_modulate = Color(0.584314, 0.32549, 0.156863, 1)
+custom_minimum_size = Vector2(1400, 900)
+layout_mode = 2
+texture = ExtResource("1_x4e22")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="HelpCanvasLayer/HowToContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HelpVBox" type="VBoxContainer" parent="HelpCanvasLayer/HowToContainer/NinePatchRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="HowToPlay" type="Label" parent="HelpCanvasLayer/HowToContainer/NinePatchRect/MarginContainer/HelpVBox"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_5ya0t")
+theme_override_font_sizes/font_size = 64
+text = "How to Play"
+horizontal_alignment = 1
+
+[node name="Divider-005" type="Sprite2D" parent="HelpCanvasLayer/HowToContainer/NinePatchRect/MarginContainer/HelpVBox/HowToPlay"]
+modulate = Color(0, 0.784314, 0.529412, 1)
+position = Vector2(788, 86.0004)
+texture = ExtResource("3_m5cn1")
+
+[node name="Divider-006" type="Sprite2D" parent="HelpCanvasLayer/HowToContainer/NinePatchRect/MarginContainer/HelpVBox/HowToPlay"]
+modulate = Color(0, 0.784314, 0.529412, 1)
+position = Vector2(569, 86.0004)
+rotation = -3.14159
+texture = ExtResource("3_m5cn1")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HelpCanvasLayer/HowToContainer/NinePatchRect/MarginContainer/HelpVBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="HowTo_English" type="Label" parent="HelpCanvasLayer/HowToContainer/NinePatchRect/MarginContainer/HelpVBox/HBoxContainer"]
+custom_minimum_size = Vector2(600, 600)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_5ya0t")
+theme_override_font_sizes/font_size = 32
+text = "・Rock-Paper-Scissors to decide who goes first.
+・Press \"DUEL\" to start.
+・A category appears.
+・・Each player has 30 seconds to type an English word that fits.
+・・It must be spelled correctly.
+・Then the battle begins:
+・・Fireballs launch from the center.
+・・More consonants = faster fireballs.
+・If a fireball reaches the end, it explodes and deals 1 damage.
+・・Each player has 3 lives.
+・・Lose all 3 = game over.
+・Player 1's fireballs move first"
+autowrap_mode = 3
+
+[node name="HowTo_Japanese" type="Label" parent="HelpCanvasLayer/HowToContainer/NinePatchRect/MarginContainer/HelpVBox/HBoxContainer"]
+custom_minimum_size = Vector2(600, 600)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_vdmri")
+theme_override_font_sizes/font_size = 30
+text = "・最初にじゃんけんで先攻を決めます。
+・「DUEL」ボタンを押してゲームを開始。
+・お題が表示されます。
+・・各プレイヤーは30秒以内に、お題に合う英単語を入力します。
+・・単語は正しく綴られている必要があります。
+・その後、バトル開始！
+・ファイアボールが中央から相手側に発射されます。
+・子音の数が多いほど、ファイアボールが多く進みます。
+・ファイアボールが相手の端に到達すると、爆発して1ダメージを与えます。
+・・各プレイヤーのライフは3つ。
+・・ライフが0になるとゲームオーバーです。
+・先攻のプレイヤーのファイアボールが先に動くため、先攻は有利です！"
+autowrap_mode = 3
+
+[node name="HelpButtonContainer" type="MarginContainer" parent="HelpCanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -90.0
+offset_bottom = 90.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+
+[node name="HelpButton" type="Button" parent="HelpCanvasLayer/HelpButtonContainer"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_5ya0t")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/hover = SubResource("StyleBoxTexture_05cob")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_05cob")
+theme_override_styles/normal = SubResource("StyleBoxTexture_a2ogf")
+text = "?"

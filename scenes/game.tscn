@@ -1,0 +1,235 @@
+[gd_scene format=3 uid="uid://b6gpu5e7dhgsd"]
+
+[ext_resource type="Script" uid="uid://dlbo02gm432xm" path="res://scripts/game.gd" id="1_vtaks"]
+[ext_resource type="Texture2D" uid="uid://dtt2qx3b3ymyo" path="res://assets/backgrounds/night_sky_02.jpg" id="1_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://cqe65ebwug8uk" path="res://assets/ui/panel-transparent-border-004.png" id="2_kvpfn"]
+[ext_resource type="Texture2D" uid="uid://w506jbh0gnh3" path="res://assets/backgrounds/castle.png" id="2_lnu2h"]
+[ext_resource type="FontFile" uid="uid://d16pn52oksxr3" path="res://assets/fonts/BadComic-Regular.ttf" id="3_dinhu"]
+[ext_resource type="Texture2D" uid="uid://dhi86olb4hnrf" path="res://assets/ui/divider-fade-005.png" id="4_kvuet"]
+[ext_resource type="FontFile" uid="uid://ca01hpq1wc688" path="res://assets/fonts/ud-digi-kyokasho-n-b.ttf" id="5_trtic"]
+[ext_resource type="Texture2D" uid="uid://bjnbr8bhhcwlr" path="res://assets/ui/silver_button_normal.png" id="6_ir15t"]
+[ext_resource type="Texture2D" uid="uid://horfgui47ycw" path="res://assets/ui/silver_button_pressed.png" id="7_ca42v"]
+[ext_resource type="Texture2D" uid="uid://bt60ydfvkne67" path="res://assets/ui/Fullscreen_Button.png" id="8_rysoc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ssvqc"]
+texture = ExtResource("6_ir15t")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_264po"]
+texture = ExtResource("7_ca42v")
+texture_margin_left = 4.0
+texture_margin_top = 5.0
+texture_margin_right = 4.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1kice"]
+texture = ExtResource("8_rysoc")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(0, 0, 64, 64)
+modulate_color = Color(0.717647, 0.717647, 0.717647, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5newe"]
+texture = ExtResource("8_rysoc")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(64, 0, 64, 64)
+
+[node name="Game" type="Control" unique_id=1350453115]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vtaks")
+
+[node name="SceneRoot" type="Node" parent="." unique_id=2118933727]
+
+[node name="HelpCanvasLayer" type="CanvasLayer" parent="." unique_id=1612043797]
+
+[node name="HowToBlocker" type="ColorRect" parent="HelpCanvasLayer" unique_id=511208036]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.196078, 0.196078, 0.196078, 0.392157)
+
+[node name="HowToContainer" type="MarginContainer" parent="HelpCanvasLayer" unique_id=1068950763]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -350.0
+offset_right = 600.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="HelpCanvasLayer/HowToContainer" unique_id=1149193049]
+self_modulate = Color(0.584314, 0.32549, 0.156863, 1)
+custom_minimum_size = Vector2(1400, 900)
+layout_mode = 2
+texture = ExtResource("2_kvpfn")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="HelpCanvasLayer/HowToContainer/NinePatchRect" unique_id=1079780673]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HelpVBox" type="VBoxContainer" parent="HelpCanvasLayer/HowToContainer/NinePatchRect/MarginContainer" unique_id=720396744]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="HowToPlay" type="Label" parent="HelpCanvasLayer/HowToContainer/NinePatchRect/MarginContainer/HelpVBox" unique_id=1567129205]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("3_dinhu")
+theme_override_font_sizes/font_size = 64
+text = "How to Play"
+horizontal_alignment = 1
+
+[node name="Divider-005" type="Sprite2D" parent="HelpCanvasLayer/HowToContainer/NinePatchRect/MarginContainer/HelpVBox/HowToPlay" unique_id=2108685222]
+modulate = Color(0, 0.784314, 0.529412, 1)
+position = Vector2(788, 86.0004)
+texture = ExtResource("4_kvuet")
+
+[node name="Divider-006" type="Sprite2D" parent="HelpCanvasLayer/HowToContainer/NinePatchRect/MarginContainer/HelpVBox/HowToPlay" unique_id=1185098445]
+modulate = Color(0, 0.784314, 0.529412, 1)
+position = Vector2(569, 86.0004)
+rotation = -3.14159
+texture = ExtResource("4_kvuet")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HelpCanvasLayer/HowToContainer/NinePatchRect/MarginContainer/HelpVBox" unique_id=717510732]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="HowTo_English" type="Label" parent="HelpCanvasLayer/HowToContainer/NinePatchRect/MarginContainer/HelpVBox/HBoxContainer" unique_id=410302584]
+custom_minimum_size = Vector2(600, 600)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_dinhu")
+theme_override_font_sizes/font_size = 32
+text = "・Rock-Paper-Scissors to decide who goes first.
+・Press \"DUEL\" to start.
+・A category appears.
+・・Each player has 30 seconds to type an English word that fits.
+・・It must be spelled correctly.
+・Then the battle begins:
+・・Fireballs launch from the center.
+・・More consonants = faster fireballs.
+・If a fireball reaches the end, it explodes and deals 1 damage.
+・・Each player has 3 lives.
+・・Lose all 3 = game over.
+・Player 1's fireballs move first"
+autowrap_mode = 3
+
+[node name="HowTo_Japanese" type="Label" parent="HelpCanvasLayer/HowToContainer/NinePatchRect/MarginContainer/HelpVBox/HBoxContainer" unique_id=496245490]
+custom_minimum_size = Vector2(600, 600)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("5_trtic")
+theme_override_font_sizes/font_size = 30
+text = "・最初にじゃんけんで先攻を決めます。
+・「DUEL」ボタンを押してゲームを開始。
+・お題が表示されます。
+・・各プレイヤーは30秒以内に、お題に合う英単語を入力します。
+・・単語は正しく綴られている必要があります。
+・その後、バトル開始！
+・ファイアボールが中央から相手側に発射されます。
+・子音の数が多いほど、ファイアボールが多く進みます。
+・ファイアボールが相手の端に到達すると、爆発して1ダメージを与えます。
+・・各プレイヤーのライフは3つ。
+・・ライフが0になるとゲームオーバーです。
+・先攻のプレイヤーのファイアボールが先に動くため、先攻は有利です！"
+autowrap_mode = 3
+
+[node name="HelpButtonContainer" type="MarginContainer" parent="HelpCanvasLayer" unique_id=318011470]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -90.0
+offset_bottom = 90.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+
+[node name="HelpButton" type="Button" parent="HelpCanvasLayer/HelpButtonContainer" unique_id=1121149051]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_dinhu")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxTexture_ssvqc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_264po")
+theme_override_styles/hover = SubResource("StyleBoxTexture_264po")
+text = "?"
+
+[node name="FullscreenButtonContainer" type="MarginContainer" parent="HelpCanvasLayer" unique_id=950824778]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -90.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="FullscreenButton" type="Button" parent="HelpCanvasLayer/FullscreenButtonContainer" unique_id=1795127170]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_1kice")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5newe")
+
+[node name="BG_Canvas" type="CanvasLayer" parent="." unique_id=1994645013]
+layer = 0
+
+[node name="Sky" type="Sprite2D" parent="BG_Canvas" unique_id=1395336740]
+position = Vector2(960, 465)
+texture = ExtResource("1_yqjtg")
+
+[node name="Castle1" type="Sprite2D" parent="BG_Canvas" unique_id=2114415888]
+position = Vector2(540, 341)
+texture = ExtResource("2_lnu2h")
+
+[node name="Castle2" type="Sprite2D" parent="BG_Canvas" unique_id=1685742330]
+position = Vector2(1453, 343)
+texture = ExtResource("2_lnu2h")
+
+[node name="BlackBottom" type="ColorRect" parent="BG_Canvas" unique_id=268926715]
+anchors_preset = -1
+anchor_top = 0.449
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.0799866
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="HelpCanvasLayer/HelpButtonContainer/HelpButton" to="." method="_on_help_button_pressed"]
+[connection signal="pressed" from="HelpCanvasLayer/FullscreenButtonContainer/FullscreenButton" to="." method="_on_fullscreen_button_pressed"]

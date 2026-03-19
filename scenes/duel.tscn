@@ -1,0 +1,241 @@
+[gd_scene load_steps=22 format=3 uid="uid://clk2nryjuh1k5"]
+
+[ext_resource type="Script" uid="uid://cw7s3f5g1db57" path="res://scripts/duel.gd" id="1_svcnu"]
+[ext_resource type="Texture2D" uid="uid://dhrrvx2bmh6ey" path="res://assets/backgrounds/Hogwarts Classroom.jpeg" id="2_dutt5"]
+[ext_resource type="Texture2D" uid="uid://cb7vbqscegobc" path="res://assets/ui/panel-transparent-center-025.png" id="3_g8o0n"]
+[ext_resource type="FontFile" uid="uid://ca01hpq1wc688" path="res://assets/fonts/ud-digi-kyokasho-n-b.ttf" id="3_y2r61"]
+[ext_resource type="Texture2D" uid="uid://cqe65ebwug8uk" path="res://assets/ui/panel-transparent-border-004.png" id="4_1p7jp"]
+[ext_resource type="Texture2D" uid="uid://b0fkidor7bqj0" path="res://assets/ui/panel-030.png" id="5_2pvd3"]
+[ext_resource type="FontFile" uid="uid://d16pn52oksxr3" path="res://assets/fonts/BadComic-Regular.ttf" id="6_7jvq3"]
+[ext_resource type="Texture2D" uid="uid://dauaowfx5cf8o" path="res://assets/ui/panel-000.png" id="7_cfrek"]
+[ext_resource type="Texture2D" uid="uid://bo2mftut5630e" path="res://assets/ui/panel-transparent-center-000.png" id="8_1qsg5"]
+[ext_resource type="FontFile" uid="uid://bb3fjyk4srnge" path="res://assets/fonts/HarryP.ttf" id="8_he6rc"]
+[ext_resource type="Texture2D" uid="uid://8d8cclqpbuq" path="res://assets/ui/panel-transparent-center-008.png" id="9_wu4ct"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m2bfe"]
+content_margin_left = 30.0
+content_margin_top = 20.0
+content_margin_right = 30.0
+content_margin_bottom = 20.0
+texture = ExtResource("4_1p7jp")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+expand_margin_left = 50.0
+expand_margin_top = 20.0
+expand_margin_right = 50.0
+expand_margin_bottom = 20.0
+modulate_color = Color(0.489622, 0.489622, 0.489622, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l7ffd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_giq8h"]
+texture = ExtResource("5_2pvd3")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+expand_margin_left = 50.0
+expand_margin_right = 50.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ntiub"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_plh63"]
+texture = ExtResource("7_cfrek")
+texture_margin_left = 28.0
+texture_margin_top = 28.0
+texture_margin_right = 28.0
+texture_margin_bottom = 28.0
+region_rect = Rect2(-4, -4, 104, 104)
+modulate_color = Color(0.170958, 0.265734, 0.562504, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iealq"]
+texture = ExtResource("8_1qsg5")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+modulate_color = Color(0.249491, 0.367923, 0.725537, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4chbx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4unar"]
+texture = ExtResource("3_g8o0n")
+texture_margin_left = 44.0
+texture_margin_top = 44.0
+texture_margin_right = 44.0
+texture_margin_bottom = 44.0
+modulate_color = Color(0.864995, 0.704409, 0.540755, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gesni"]
+texture = ExtResource("3_g8o0n")
+texture_margin_left = 44.0
+texture_margin_top = 44.0
+texture_margin_right = 44.0
+texture_margin_bottom = 44.0
+modulate_color = Color(0.756863, 0.580392, 0.396078, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xm5qv"]
+texture = ExtResource("9_wu4ct")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 32.0
+modulate_color = Color(0.588235, 0.521569, 0.443137, 1)
+
+[node name="DualScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_svcnu")
+
+[node name="DuelCanvas" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Background" type="TextureRect" parent="DuelCanvas"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_dutt5")
+expand_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="DuelCanvas"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+
+[node name="Label" type="Label" parent="DuelCanvas/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("3_y2r61")
+theme_override_font_sizes/font_size = 32
+text = "* No plurals
+* 複数形は不可"
+
+[node name="MarginContainer" type="MarginContainer" parent="DuelCanvas"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DuelCanvas/MarginContainer"]
+custom_minimum_size = Vector2(1400, 800)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="DuelCanvas/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="CategoryLabel" type="Label" parent="DuelCanvas/MarginContainer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_y2r61")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxTexture_m2bfe")
+text = "CATEGORY:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerInput" type="LineEdit" parent="DuelCanvas/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(700, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0.617455, 0.617455, 0.617455, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/caret_width = 6
+theme_override_fonts/font = ExtResource("3_y2r61")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxTexture_l7ffd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_giq8h")
+placeholder_text = "Type word here..."
+alignment = 1
+
+[node name="DoneButton" type="Button" parent="DuelCanvas/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("6_7jvq3")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ntiub")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_plh63")
+theme_override_styles/hover = SubResource("StyleBoxTexture_plh63")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_plh63")
+theme_override_styles/normal = SubResource("StyleBoxTexture_iealq")
+text = "DONE"
+
+[node name="ConfirmButton" type="Button" parent="DuelCanvas/MarginContainer"]
+custom_minimum_size = Vector2(800, 500)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.756863, 0.580392, 0.396078, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("6_7jvq3")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4chbx")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_4unar")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4unar")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4unar")
+theme_override_styles/normal = SubResource("StyleBoxTexture_gesni")
+text = "READY PLAYER 1?"
+
+[node name="Timer" type="Timer" parent="DuelCanvas"]
+
+[node name="TimerLabel" type="Label" parent="DuelCanvas/Timer"]
+z_index = 5
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 603.0
+offset_top = -471.0
+offset_right = 872.0
+offset_bottom = -376.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.878431, 0.792157, 0.698039, 1)
+theme_override_colors/font_outline_color = Color(0.278431, 0.215686, 0.156863, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("8_he6rc")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxTexture_xm5qv")
+text = "30"
+horizontal_alignment = 1
+vertical_alignment = 1

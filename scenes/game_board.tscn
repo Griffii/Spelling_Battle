@@ -1,0 +1,264 @@
+[gd_scene format=3 uid="uid://t6nyj7kwmka2"]
+
+[ext_resource type="Script" uid="uid://nanxvns5ka6d" path="res://scripts/main.gd" id="1_w5uqb"]
+[ext_resource type="FontFile" uid="uid://bb3fjyk4srnge" path="res://assets/fonts/HarryP.ttf" id="2_sax53"]
+[ext_resource type="PackedScene" uid="uid://d3fkc5j0jgxar" path="res://scenes/board.tscn" id="3_axant"]
+[ext_resource type="Texture2D" uid="uid://cqe65ebwug8uk" path="res://assets/ui/panel-transparent-border-004.png" id="4_cac7a"]
+[ext_resource type="FontFile" uid="uid://d16pn52oksxr3" path="res://assets/fonts/BadComic-Regular.ttf" id="5_hl2y5"]
+[ext_resource type="Texture2D" uid="uid://dhi86olb4hnrf" path="res://assets/ui/divider-fade-005.png" id="6_8auva"]
+[ext_resource type="FontFile" uid="uid://ca01hpq1wc688" path="res://assets/fonts/ud-digi-kyokasho-n-b.ttf" id="7_hrnlr"]
+[ext_resource type="Texture2D" uid="uid://bjnbr8bhhcwlr" path="res://assets/ui/silver_button_normal.png" id="8_kntti"]
+[ext_resource type="Texture2D" uid="uid://horfgui47ycw" path="res://assets/ui/silver_button_pressed.png" id="9_j1tcj"]
+[ext_resource type="Texture2D" uid="uid://bt60ydfvkne67" path="res://assets/ui/Fullscreen_Button.png" id="10_o2enx"]
+[ext_resource type="Texture2D" uid="uid://dtt2qx3b3ymyo" path="res://assets/backgrounds/night_sky_02.jpg" id="11_eerdt"]
+[ext_resource type="Texture2D" uid="uid://w506jbh0gnh3" path="res://assets/backgrounds/castle.png" id="12_2sbk6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lr4sa"]
+texture = ExtResource("8_kntti")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3ik03"]
+texture = ExtResource("9_j1tcj")
+texture_margin_left = 4.0
+texture_margin_top = 5.0
+texture_margin_right = 4.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8mqd7"]
+texture = ExtResource("10_o2enx")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(0, 0, 64, 64)
+modulate_color = Color(0.717647, 0.717647, 0.717647, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oxa1v"]
+texture = ExtResource("10_o2enx")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(64, 0, 64, 64)
+
+[node name="GameBoard" type="Control" unique_id=583186377]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1920.0
+offset_bottom = -1080.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w5uqb")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=440643413]
+anchor_mode = 0
+
+[node name="Board_Canvas" type="CanvasLayer" parent="." unique_id=1730758171]
+unique_name_in_owner = true
+
+[node name="Title" type="Label" parent="Board_Canvas" unique_id=1188162653]
+anchors_preset = -1
+anchor_right = 1.003
+anchor_bottom = 0.165
+offset_right = -5.76001
+offset_bottom = -0.200012
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0.443137, 0.462745, 0.47451, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("2_sax53")
+theme_override_font_sizes/font_size = 84
+text = "SPELL(ing) BATTLE!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Board" parent="Board_Canvas" unique_id=2081720249 instance=ExtResource("3_axant")]
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HelpCanvasLayer" type="CanvasLayer" parent="Board_Canvas" unique_id=216947136]
+
+[node name="HowToBlocker" type="ColorRect" parent="Board_Canvas/HelpCanvasLayer" unique_id=2129458460]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.196078, 0.196078, 0.196078, 0.392157)
+
+[node name="HowToContainer" type="MarginContainer" parent="Board_Canvas/HelpCanvasLayer" unique_id=2071182862]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -350.0
+offset_right = 600.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Board_Canvas/HelpCanvasLayer/HowToContainer" unique_id=253350827]
+self_modulate = Color(0.584314, 0.32549, 0.156863, 1)
+custom_minimum_size = Vector2(1400, 900)
+layout_mode = 2
+texture = ExtResource("4_cac7a")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="Board_Canvas/HelpCanvasLayer/HowToContainer/NinePatchRect" unique_id=49375791]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HelpVBox" type="VBoxContainer" parent="Board_Canvas/HelpCanvasLayer/HowToContainer/NinePatchRect/MarginContainer" unique_id=706457938]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="HowToPlay" type="Label" parent="Board_Canvas/HelpCanvasLayer/HowToContainer/NinePatchRect/MarginContainer/HelpVBox" unique_id=1249224127]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("5_hl2y5")
+theme_override_font_sizes/font_size = 64
+text = "How to Play"
+horizontal_alignment = 1
+
+[node name="Divider-005" type="Sprite2D" parent="Board_Canvas/HelpCanvasLayer/HowToContainer/NinePatchRect/MarginContainer/HelpVBox/HowToPlay" unique_id=409150981]
+modulate = Color(0, 0.784314, 0.529412, 1)
+position = Vector2(788, 86.0004)
+texture = ExtResource("6_8auva")
+
+[node name="Divider-006" type="Sprite2D" parent="Board_Canvas/HelpCanvasLayer/HowToContainer/NinePatchRect/MarginContainer/HelpVBox/HowToPlay" unique_id=251202624]
+modulate = Color(0, 0.784314, 0.529412, 1)
+position = Vector2(569, 86.0004)
+rotation = -3.14159
+texture = ExtResource("6_8auva")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Board_Canvas/HelpCanvasLayer/HowToContainer/NinePatchRect/MarginContainer/HelpVBox" unique_id=1460398446]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="HowTo_English" type="Label" parent="Board_Canvas/HelpCanvasLayer/HowToContainer/NinePatchRect/MarginContainer/HelpVBox/HBoxContainer" unique_id=720532370]
+custom_minimum_size = Vector2(600, 600)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("5_hl2y5")
+theme_override_font_sizes/font_size = 32
+text = "・Rock-Paper-Scissors to decide who goes first.
+・Press \"DUEL\" to start.
+・A category appears.
+・・Each player has 30 seconds to type an English word that fits.
+・・It must be spelled correctly.
+・Then the battle begins:
+・・Fireballs launch from the center.
+・・More consonants = faster fireballs.
+・If a fireball reaches the end, it explodes and deals 1 damage.
+・・Each player has 3 lives.
+・・Lose all 3 = game over.
+・Player 1's fireballs move first"
+autowrap_mode = 3
+
+[node name="HowTo_Japanese" type="Label" parent="Board_Canvas/HelpCanvasLayer/HowToContainer/NinePatchRect/MarginContainer/HelpVBox/HBoxContainer" unique_id=2031223488]
+custom_minimum_size = Vector2(600, 600)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("7_hrnlr")
+theme_override_font_sizes/font_size = 30
+text = "・最初にじゃんけんで先攻を決めます。
+・「DUEL」ボタンを押してゲームを開始。
+・お題が表示されます。
+・・各プレイヤーは30秒以内に、お題に合う英単語を入力します。
+・・単語は正しく綴られている必要があります。
+・その後、バトル開始！
+・ファイアボールが中央から相手側に発射されます。
+・子音の数が多いほど、ファイアボールが多く進みます。
+・ファイアボールが相手の端に到達すると、爆発して1ダメージを与えます。
+・・各プレイヤーのライフは3つ。
+・・ライフが0になるとゲームオーバーです。
+・先攻のプレイヤーのファイアボールが先に動くため、先攻は有利です！"
+autowrap_mode = 3
+
+[node name="HelpButtonContainer" type="MarginContainer" parent="Board_Canvas/HelpCanvasLayer" unique_id=1804150671]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -90.0
+offset_bottom = 90.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+
+[node name="HelpButton" type="Button" parent="Board_Canvas/HelpCanvasLayer/HelpButtonContainer" unique_id=2008095687]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_hl2y5")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxTexture_lr4sa")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3ik03")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3ik03")
+text = "?"
+
+[node name="FullscreenButtonContainer" type="MarginContainer" parent="Board_Canvas/HelpCanvasLayer" unique_id=1513999495]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -90.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="FullscreenButton" type="Button" parent="Board_Canvas/HelpCanvasLayer/FullscreenButtonContainer" unique_id=638243140]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_8mqd7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_oxa1v")
+
+[node name="BG_Canvas" type="CanvasLayer" parent="." unique_id=1356662294]
+layer = 0
+
+[node name="Sky" type="Sprite2D" parent="BG_Canvas" unique_id=1200258011]
+position = Vector2(960, 465)
+texture = ExtResource("11_eerdt")
+
+[node name="Castle1" type="Sprite2D" parent="BG_Canvas" unique_id=1899362973]
+position = Vector2(540, 341)
+texture = ExtResource("12_2sbk6")
+
+[node name="Castle2" type="Sprite2D" parent="BG_Canvas" unique_id=753197268]
+position = Vector2(1453, 343)
+texture = ExtResource("12_2sbk6")
+
+[node name="BlackBottom" type="ColorRect" parent="BG_Canvas" unique_id=1346963845]
+anchors_preset = -1
+anchor_top = 0.449
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.0799866
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="Board_Canvas/HelpCanvasLayer/HelpButtonContainer/HelpButton" to="." method="_on_help_button_pressed"]
+[connection signal="pressed" from="Board_Canvas/HelpCanvasLayer/FullscreenButtonContainer/FullscreenButton" to="." method="_on_fullscreen_button_pressed"]

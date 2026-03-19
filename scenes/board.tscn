@@ -1,0 +1,2346 @@
+[gd_scene load_steps=14 format=3 uid="uid://d3fkc5j0jgxar"]
+
+[ext_resource type="Script" uid="uid://dye0v4352tais" path="res://scripts/board.gd" id="1_33tri"]
+[ext_resource type="Texture2D" uid="uid://bhpp5nurf3hu4" path="res://assets/ui/panel-transparent-center-004.png" id="2_vjuv0"]
+[ext_resource type="Texture2D" uid="uid://c7uovob2u1fv" path="res://assets/ui/panel-transparent-border-006.png" id="3_o8pq8"]
+[ext_resource type="FontFile" uid="uid://bb3fjyk4srnge" path="res://assets/fonts/HarryP.ttf" id="3_vjxsp"]
+[ext_resource type="AudioStream" uid="uid://clp8ko2ek2as8" path="res://assets/sounds/magic_glissando.mp3" id="4_foen4"]
+[ext_resource type="Texture2D" uid="uid://dx1icic67nm8y" path="res://assets/ui/singles/panel-transparent-border-022.png" id="4_mtaqs"]
+[ext_resource type="AudioStream" uid="uid://m36cc0ql5g54" path="res://assets/sounds/fire_move.mp3" id="5_64rtp"]
+[ext_resource type="Texture2D" uid="uid://dwvx58h6s0eqy" path="res://assets/sprites/heart.png" id="6_iv533"]
+[ext_resource type="Texture2D" uid="uid://cp7kekabdpa63" path="res://assets/ui/singles/panel-transparent-border-024.png" id="6_wyuhl"]
+[ext_resource type="AudioStream" uid="uid://bc6k732kft8uv" path="res://assets/sounds/medium-explosion.mp3" id="10_ix7pc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ar2e0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gmxx7"]
+texture = ExtResource("6_wyuhl")
+texture_margin_left = 21.0
+texture_margin_top = 20.0
+texture_margin_right = 21.0
+texture_margin_bottom = 22.0
+region_rect = Rect2(-5, -4, 58, 58)
+modulate_color = Color(0.293328, 0.420176, 0.786786, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ayim5"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+texture = ExtResource("6_wyuhl")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+modulate_color = Color(0.175996, 0.27267, 0.575028, 1)
+
+[node name="Board" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_33tri")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 60
+
+[node name="The_Board" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Board_Border" type="NinePatchRect" parent="MarginContainer/The_Board"]
+self_modulate = Color(0.392157, 0.117647, 0.117647, 1)
+custom_minimum_size = Vector2(1700, 750)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_vjuv0")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/The_Board/Board_Border"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -46.0
+offset_right = 48.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/The_Board/Board_Border/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Row1" type="GridContainer" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer"]
+z_index = 1
+layout_mode = 2
+columns = 21
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row1"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row1"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row1"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect4" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row1"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect5" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row1"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect6" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row1"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect7" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row1"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect8" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row1"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect9" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row1"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect10" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row1"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect11" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row1"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect12" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row1"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect13" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row1"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect14" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row1"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect15" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row1"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect16" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row1"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect17" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row1"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect18" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row1"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect19" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row1"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect20" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row1"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect21" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row1"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="Row2" type="GridContainer" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer"]
+z_index = 1
+layout_mode = 2
+columns = 21
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row2"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row2"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row2"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect4" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row2"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect5" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row2"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect6" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row2"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect7" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row2"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect8" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row2"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect9" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row2"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect10" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row2"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect11" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row2"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect12" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row2"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect13" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row2"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect14" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row2"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect15" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row2"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect16" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row2"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect17" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row2"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect18" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row2"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect19" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row2"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect20" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row2"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect21" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row2"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="Row3" type="GridContainer" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer"]
+z_index = 1
+layout_mode = 2
+columns = 21
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row3"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row3"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row3"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect4" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row3"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect5" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row3"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect6" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row3"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect7" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row3"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect8" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row3"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect9" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row3"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect10" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row3"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect11" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row3"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect12" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row3"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect13" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row3"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect14" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row3"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect15" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row3"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect16" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row3"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect17" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row3"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect18" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row3"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect19" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row3"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect20" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row3"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect21" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row3"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="Row4" type="GridContainer" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer"]
+z_index = 1
+layout_mode = 2
+columns = 21
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row4"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row4"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row4"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect4" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row4"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect5" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row4"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect6" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row4"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect7" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row4"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect8" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row4"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect9" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row4"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect10" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row4"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect11" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row4"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect12" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row4"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect13" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row4"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect14" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row4"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect15" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row4"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect16" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row4"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect17" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row4"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect18" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row4"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect19" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row4"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect20" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row4"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect21" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row4"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="Middle_Row" type="GridContainer" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer"]
+z_index = 1
+layout_mode = 2
+columns = 21
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Middle_Row"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Middle_Row"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Middle_Row"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="NinePatchRect4" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Middle_Row"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="NinePatchRect5" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Middle_Row"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="NinePatchRect6" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Middle_Row"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="NinePatchRect7" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Middle_Row"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="NinePatchRect8" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Middle_Row"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="NinePatchRect9" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Middle_Row"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="NinePatchRect10" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Middle_Row"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="NinePatchRect11" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Middle_Row"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="NinePatchRect12" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Middle_Row"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="NinePatchRect13" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Middle_Row"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="NinePatchRect14" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Middle_Row"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="NinePatchRect15" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Middle_Row"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="NinePatchRect16" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Middle_Row"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="NinePatchRect17" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Middle_Row"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="NinePatchRect18" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Middle_Row"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="NinePatchRect19" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Middle_Row"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="NinePatchRect20" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Middle_Row"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="NinePatchRect21" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Middle_Row"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="Row5" type="GridContainer" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer"]
+z_index = 1
+layout_mode = 2
+columns = 21
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row5"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row5"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row5"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect4" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row5"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect5" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row5"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect6" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row5"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect7" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row5"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect8" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row5"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect9" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row5"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect10" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row5"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect11" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row5"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect12" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row5"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect13" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row5"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect14" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row5"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect15" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row5"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect16" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row5"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect17" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row5"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect18" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row5"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect19" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row5"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect20" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row5"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect21" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row5"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="Row6" type="GridContainer" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer"]
+z_index = 1
+layout_mode = 2
+columns = 21
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row6"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row6"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row6"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect4" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row6"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect5" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row6"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect6" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row6"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect7" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row6"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect8" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row6"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect9" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row6"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect10" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row6"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect11" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row6"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect12" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row6"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect13" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row6"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect14" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row6"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect15" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row6"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect16" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row6"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect17" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row6"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect18" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row6"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect19" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row6"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect20" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row6"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect21" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row6"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="Row7" type="GridContainer" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer"]
+z_index = 1
+layout_mode = 2
+columns = 21
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row7"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row7"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row7"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect4" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row7"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect5" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row7"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect6" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row7"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect7" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row7"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect8" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row7"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect9" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row7"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect10" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row7"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect11" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row7"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect12" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row7"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect13" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row7"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect14" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row7"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect15" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row7"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect16" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row7"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect17" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row7"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect18" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row7"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect19" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row7"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect20" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row7"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="NinePatchRect21" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row7"]
+self_modulate = Color(0.443137, 0.462745, 0.47451, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("4_mtaqs")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="Row8" type="GridContainer" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer"]
+z_index = 1
+layout_mode = 2
+columns = 21
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row8"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row8"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row8"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect4" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row8"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect5" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row8"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect6" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row8"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect7" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row8"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect8" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row8"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect9" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row8"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect10" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row8"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect11" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row8"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect12" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row8"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect13" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row8"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect14" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row8"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect15" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row8"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect16" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row8"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect17" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row8"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect18" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row8"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect19" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row8"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect20" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row8"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="NinePatchRect21" type="NinePatchRect" parent="MarginContainer/The_Board/Board_Border/MarginContainer/VBoxContainer/Row8"]
+self_modulate = Color(0.764706, 0.603922, 0.109804, 1)
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("3_o8pq8")
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 28
+patch_margin_bottom = 28
+
+[node name="Labels" type="HBoxContainer" parent="MarginContainer/The_Board"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 300
+
+[node name="Player1Box" type="VBoxContainer" parent="MarginContainer/The_Board/Labels"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Player1" type="Label" parent="MarginContainer/The_Board/Labels/Player1Box"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_vjxsp")
+theme_override_font_sizes/font_size = 64
+text = "Player 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/The_Board/Labels/Player1Box"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/The_Board/Labels/Player1Box/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_iv533")
+
+[node name="Player1Health" type="Label" parent="MarginContainer/The_Board/Labels/Player1Box/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_vjxsp")
+theme_override_font_sizes/font_size = 64
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DualButton" type="Button" parent="MarginContainer/The_Board/Labels"]
+custom_minimum_size = Vector2(300, 130)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(1, 0.858824, 0, 1)
+theme_override_colors/font_outline_color = Color(0.443137, 0.462745, 0.47451, 1)
+theme_override_colors/font_color = Color(1, 0.858824, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_vjxsp")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxTexture_ar2e0")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_gmxx7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gmxx7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gmxx7")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ayim5")
+text = "DUEL"
+
+[node name="Player2Box" type="VBoxContainer" parent="MarginContainer/The_Board/Labels"]
+layout_mode = 2
+alignment = 1
+
+[node name="Player2" type="Label" parent="MarginContainer/The_Board/Labels/Player2Box"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_vjxsp")
+theme_override_font_sizes/font_size = 64
+text = "Player 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/The_Board/Labels/Player2Box"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/The_Board/Labels/Player2Box/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("6_iv533")
+
+[node name="Player2Health" type="Label" parent="MarginContainer/The_Board/Labels/Player2Box/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_vjxsp")
+theme_override_font_sizes/font_size = 64
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LettersContainer" type="Node2D" parent="MarginContainer"]
+z_index = 1
+position = Vector2(110, 46)
+
+[node name="b" type="Label" parent="MarginContainer/LettersContainer"]
+offset_left = 46.0
+offset_top = 444.0
+offset_right = 73.0
+offset_bottom = 509.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vjxsp")
+theme_override_font_sizes/font_size = 64
+text = "B"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="c" type="Label" parent="MarginContainer/LettersContainer"]
+offset_left = 124.0
+offset_top = 444.0
+offset_right = 155.0
+offset_bottom = 509.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vjxsp")
+theme_override_font_sizes/font_size = 64
+text = "C"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="d" type="Label" parent="MarginContainer/LettersContainer"]
+offset_left = 206.0
+offset_top = 444.0
+offset_right = 237.0
+offset_bottom = 509.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vjxsp")
+theme_override_font_sizes/font_size = 64
+text = "D"
+
+[node name="f" type="Label" parent="MarginContainer/LettersContainer"]
+offset_left = 284.0
+offset_top = 444.0
+offset_right = 309.0
+offset_bottom = 509.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vjxsp")
+theme_override_font_sizes/font_size = 64
+text = "F"
+
+[node name="g" type="Label" parent="MarginContainer/LettersContainer"]
+offset_left = 359.0
+offset_top = 445.0
+offset_right = 390.0
+offset_bottom = 510.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vjxsp")
+theme_override_font_sizes/font_size = 64
+text = "G"
+
+[node name="h" type="Label" parent="MarginContainer/LettersContainer"]
+offset_left = 437.0
+offset_top = 444.0
+offset_right = 469.0
+offset_bottom = 509.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vjxsp")
+theme_override_font_sizes/font_size = 64
+text = "H"
+
+[node name="j" type="Label" parent="MarginContainer/LettersContainer"]
+offset_left = 516.0
+offset_top = 441.0
+offset_right = 547.0
+offset_bottom = 506.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vjxsp")
+theme_override_font_sizes/font_size = 64
+text = "J"
+
+[node name="k" type="Label" parent="MarginContainer/LettersContainer"]
+offset_left = 597.0
+offset_top = 445.0
+offset_right = 628.0
+offset_bottom = 510.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vjxsp")
+theme_override_font_sizes/font_size = 64
+text = "K"
+
+[node name="l" type="Label" parent="MarginContainer/LettersContainer"]
+offset_left = 676.0
+offset_top = 440.0
+offset_right = 710.0
+offset_bottom = 505.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vjxsp")
+theme_override_font_sizes/font_size = 64
+text = "L"
+
+[node name="m" type="Label" parent="MarginContainer/LettersContainer"]
+offset_left = 748.0
+offset_top = 442.0
+offset_right = 793.0
+offset_bottom = 507.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vjxsp")
+theme_override_font_sizes/font_size = 64
+text = "M"
+
+[node name="n" type="Label" parent="MarginContainer/LettersContainer"]
+offset_left = 830.0
+offset_top = 443.0
+offset_right = 867.0
+offset_bottom = 508.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vjxsp")
+theme_override_font_sizes/font_size = 64
+text = "N"
+
+[node name="p" type="Label" parent="MarginContainer/LettersContainer"]
+offset_left = 918.0
+offset_top = 445.0
+offset_right = 944.0
+offset_bottom = 510.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vjxsp")
+theme_override_font_sizes/font_size = 64
+text = "P"
+
+[node name="q" type="Label" parent="MarginContainer/LettersContainer"]
+offset_left = 992.0
+offset_top = 443.0
+offset_right = 1023.0
+offset_bottom = 508.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vjxsp")
+theme_override_font_sizes/font_size = 64
+text = "Q"
+
+[node name="r" type="Label" parent="MarginContainer/LettersContainer"]
+offset_left = 1071.0
+offset_top = 443.0
+offset_right = 1096.0
+offset_bottom = 508.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vjxsp")
+theme_override_font_sizes/font_size = 64
+text = "R"
+
+[node name="s" type="Label" parent="MarginContainer/LettersContainer"]
+offset_left = 1150.0
+offset_top = 447.0
+offset_right = 1179.0
+offset_bottom = 512.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vjxsp")
+theme_override_font_sizes/font_size = 64
+text = "S"
+
+[node name="t" type="Label" parent="MarginContainer/LettersContainer"]
+offset_left = 1226.0
+offset_top = 446.0
+offset_right = 1266.0
+offset_bottom = 511.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vjxsp")
+theme_override_font_sizes/font_size = 64
+text = "T"
+
+[node name="v" type="Label" parent="MarginContainer/LettersContainer"]
+offset_left = 1305.0
+offset_top = 445.0
+offset_right = 1343.0
+offset_bottom = 510.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vjxsp")
+theme_override_font_sizes/font_size = 64
+text = "V"
+
+[node name="w" type="Label" parent="MarginContainer/LettersContainer"]
+offset_left = 1382.0
+offset_top = 445.0
+offset_right = 1427.0
+offset_bottom = 510.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vjxsp")
+theme_override_font_sizes/font_size = 64
+text = "W"
+
+[node name="x" type="Label" parent="MarginContainer/LettersContainer"]
+offset_left = 1466.0
+offset_top = 445.0
+offset_right = 1499.0
+offset_bottom = 510.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vjxsp")
+theme_override_font_sizes/font_size = 64
+text = "X"
+
+[node name="y" type="Label" parent="MarginContainer/LettersContainer"]
+offset_left = 1544.0
+offset_top = 443.0
+offset_right = 1576.0
+offset_bottom = 508.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vjxsp")
+theme_override_font_sizes/font_size = 64
+text = "Y"
+
+[node name="z" type="Label" parent="MarginContainer/LettersContainer"]
+offset_left = 1623.0
+offset_top = 442.0
+offset_right = 1656.0
+offset_bottom = 507.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vjxsp")
+theme_override_font_sizes/font_size = 64
+text = "Z"
+
+[node name="FireballContainer" type="Node2D" parent="MarginContainer"]
+
+[node name="LabelContainer" type="Node2D" parent="MarginContainer"]
+
+[node name="DualContainer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="audio_intro" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_foen4")
+
+[node name="fire_move" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_64rtp")
+volume_db = 5.0
+max_polyphony = 5
+
+[node name="fire_explosion" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_ix7pc")
+volume_db = 5.0

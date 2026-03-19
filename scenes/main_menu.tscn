@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://peuh1kwtk8xi"]
+
+[ext_resource type="Script" uid="uid://c02p3wghbijk6" path="res://scripts/main_menu.gd" id="1_8ln24"]
+[ext_resource type="FontFile" uid="uid://bb3fjyk4srnge" path="res://assets/fonts/HarryP.ttf" id="1_wu84c"]
+[ext_resource type="Texture2D" uid="uid://bo2mftut5630e" path="res://assets/ui/panel-transparent-center-000.png" id="2_8ln24"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tbmy8"]
+texture = ExtResource("2_8ln24")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+modulate_color = Color(0.580392, 0.419608, 0.176471, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jk1qb"]
+texture = ExtResource("2_8ln24")
+texture_margin_left = 29.0
+texture_margin_top = 29.0
+texture_margin_right = 29.0
+texture_margin_bottom = 28.0
+region_rect = Rect2(-5, -5, 106, 105)
+modulate_color = Color(0.673158, 0.491023, 0.217314, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5dd4i"]
+
+[node name="MainMenu" type="Control" unique_id=1006981149]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_8ln24")
+
+[node name="Menu_Canvas" type="CanvasLayer" parent="." unique_id=704588494]
+unique_name_in_owner = true
+
+[node name="Title" type="Label" parent="Menu_Canvas" unique_id=79331594]
+anchors_preset = -1
+anchor_right = 1.003
+anchor_bottom = 0.37600002
+offset_right = -5.76001
+offset_bottom = -0.08001709
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0.443137, 0.462745, 0.47451, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("1_wu84c")
+theme_override_font_sizes/font_size = 132
+text = "SPELL(ing) BATTLE!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainMenu_Container" type="MarginContainer" parent="Menu_Canvas" unique_id=353426248]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu_Canvas/MainMenu_Container" unique_id=394610869]
+layout_mode = 2
+alignment = 1
+
+[node name="Singleplayer_Button" type="Button" parent="Menu_Canvas/MainMenu_Container/VBoxContainer" unique_id=995509126]
+custom_minimum_size = Vector2(300, 125)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_wu84c")
+theme_override_font_sizes/font_size = 82
+theme_override_styles/normal = SubResource("StyleBoxTexture_tbmy8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jk1qb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jk1qb")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_jk1qb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5dd4i")
+text = "1 Player"
+
+[node name="Host_Button" type="Button" parent="Menu_Canvas/MainMenu_Container/VBoxContainer" unique_id=828549811]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 125)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_wu84c")
+theme_override_font_sizes/font_size = 82
+theme_override_styles/normal = SubResource("StyleBoxTexture_tbmy8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jk1qb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jk1qb")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_jk1qb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5dd4i")
+text = "Host Game"
+
+[node name="Join_Button" type="Button" parent="Menu_Canvas/MainMenu_Container/VBoxContainer" unique_id=184294575]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 125)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_wu84c")
+theme_override_font_sizes/font_size = 82
+theme_override_styles/normal = SubResource("StyleBoxTexture_tbmy8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jk1qb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jk1qb")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_jk1qb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5dd4i")
+text = "Join Game"
+
+[connection signal="pressed" from="Menu_Canvas/MainMenu_Container/VBoxContainer/Host_Button" to="." method="become_host"]
+[connection signal="pressed" from="Menu_Canvas/MainMenu_Container/VBoxContainer/Join_Button" to="." method="join_game"]

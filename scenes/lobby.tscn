@@ -1,0 +1,205 @@
+[gd_scene format=3 uid="uid://cgj6dmlfq6bgy"]
+
+[ext_resource type="FontFile" uid="uid://ca01hpq1wc688" path="res://assets/fonts/ud-digi-kyokasho-n-b.ttf" id="1_07nfq"]
+[ext_resource type="Script" uid="uid://b04koec2ffhmj" path="res://lobby.gd" id="1_oipnb"]
+[ext_resource type="Texture2D" uid="uid://cqe65ebwug8uk" path="res://assets/ui/panel-transparent-border-004.png" id="2_oipnb"]
+[ext_resource type="Texture2D" uid="uid://b0fkidor7bqj0" path="res://assets/ui/panel-030.png" id="3_yad6j"]
+[ext_resource type="FontFile" uid="uid://d16pn52oksxr3" path="res://assets/fonts/BadComic-Regular.ttf" id="4_m1sns"]
+[ext_resource type="Texture2D" uid="uid://bo2mftut5630e" path="res://assets/ui/panel-transparent-center-000.png" id="5_dyhay"]
+[ext_resource type="Texture2D" uid="uid://dauaowfx5cf8o" path="res://assets/ui/panel-000.png" id="6_q6qq2"]
+[ext_resource type="Texture2D" uid="uid://cb7vbqscegobc" path="res://assets/ui/panel-transparent-center-025.png" id="7_rgcd7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o2i1r"]
+content_margin_left = 30.0
+content_margin_top = 20.0
+content_margin_right = 30.0
+content_margin_bottom = 20.0
+texture = ExtResource("2_oipnb")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+expand_margin_left = 50.0
+expand_margin_top = 20.0
+expand_margin_right = 50.0
+expand_margin_bottom = 20.0
+modulate_color = Color(0.489622, 0.489622, 0.489622, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wjff0"]
+texture = ExtResource("7_rgcd7")
+texture_margin_left = 44.0
+texture_margin_top = 44.0
+texture_margin_right = 44.0
+texture_margin_bottom = 44.0
+modulate_color = Color(0.756863, 0.580392, 0.396078, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h1rib"]
+texture = ExtResource("7_rgcd7")
+texture_margin_left = 44.0
+texture_margin_top = 44.0
+texture_margin_right = 44.0
+texture_margin_bottom = 44.0
+modulate_color = Color(0.864995, 0.704409, 0.540755, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kn4i6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iulku"]
+texture = ExtResource("3_yad6j")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+expand_margin_left = 50.0
+expand_margin_right = 50.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dfnwm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0jb4q"]
+texture = ExtResource("5_dyhay")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+modulate_color = Color(0.249491, 0.367923, 0.725537, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vwf6o"]
+texture = ExtResource("6_q6qq2")
+texture_margin_left = 28.0
+texture_margin_top = 28.0
+texture_margin_right = 28.0
+texture_margin_bottom = 28.0
+region_rect = Rect2(-4, -4, 104, 104)
+modulate_color = Color(0.170958, 0.265734, 0.562504, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iwi7x"]
+
+[node name="Lobby" type="Control" unique_id=217402880]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oipnb")
+
+[node name="Lobby_Canvas" type="CanvasLayer" parent="." unique_id=548803791]
+
+[node name="MarginContainer" type="MarginContainer" parent="Lobby_Canvas" unique_id=1037013504]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HostUI" type="VBoxContainer" parent="Lobby_Canvas/MarginContainer" unique_id=1045086823]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Lobby_Canvas/MarginContainer/HostUI" unique_id=1537622140]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="EnterCodeLabel" type="Label" parent="Lobby_Canvas/MarginContainer/HostUI/MarginContainer" unique_id=672456934]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_07nfq")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxTexture_o2i1r")
+text = "Join Code"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ConfirmButton" type="Button" parent="Lobby_Canvas/MarginContainer/HostUI" unique_id=2049038405]
+custom_minimum_size = Vector2(800, 500)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.756863, 0.580392, 0.396078, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_m1sns")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxTexture_wjff0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_h1rib")
+theme_override_styles/hover = SubResource("StyleBoxTexture_h1rib")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_h1rib")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kn4i6")
+text = "Waiting for other player..."
+
+[node name="JoinUI" type="VBoxContainer" parent="Lobby_Canvas/MarginContainer" unique_id=1517258097]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(1400, 800)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Lobby_Canvas/MarginContainer/JoinUI" unique_id=1365976519]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="EnterCodeLabel" type="Label" parent="Lobby_Canvas/MarginContainer/JoinUI/MarginContainer" unique_id=316352515]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_07nfq")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxTexture_o2i1r")
+text = "Enter Join Code:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerInput" type="LineEdit" parent="Lobby_Canvas/MarginContainer/JoinUI" unique_id=1204040055]
+custom_minimum_size = Vector2(700, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0.617455, 0.617455, 0.617455, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/caret_width = 6
+theme_override_fonts/font = ExtResource("1_07nfq")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxTexture_iulku")
+theme_override_styles/focus = SubResource("StyleBoxTexture_dfnwm")
+placeholder_text = "Type code here..."
+alignment = 1
+
+[node name="DoneButton" type="Button" parent="Lobby_Canvas/MarginContainer/JoinUI" unique_id=796465251]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_m1sns")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxTexture_0jb4q")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vwf6o")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vwf6o")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_vwf6o")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_iwi7x")
+text = "DONE"

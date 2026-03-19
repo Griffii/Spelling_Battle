@@ -1,0 +1,248 @@
+[gd_scene load_steps=12 format=3 uid="uid://b3ei7ujqw48cb"]
+
+[ext_resource type="Script" uid="uid://dlvow8qlqwb80" path="res://scripts/confirm.gd" id="1_xef82"]
+[ext_resource type="Texture2D" uid="uid://rmi7jlhnvodu" path="res://assets/ui/panel-transparent-border-025.png" id="2_6ntj1"]
+[ext_resource type="Texture2D" uid="uid://bbatcn2u2jdbd" path="res://assets/sprites/check.png" id="2_bwjy5"]
+[ext_resource type="FontFile" uid="uid://d16pn52oksxr3" path="res://assets/fonts/BadComic-Regular.ttf" id="3_a4hw2"]
+[ext_resource type="FontFile" uid="uid://ca01hpq1wc688" path="res://assets/fonts/ud-digi-kyokasho-n-b.ttf" id="3_l4j0l"]
+[ext_resource type="Texture2D" uid="uid://dmulmtglrvynj" path="res://assets/sprites/x.png" id="3_nj64v"]
+[ext_resource type="FontFile" uid="uid://bb3fjyk4srnge" path="res://assets/fonts/HarryP.ttf" id="5_2yp5o"]
+[ext_resource type="Texture2D" uid="uid://bo2mftut5630e" path="res://assets/ui/panel-transparent-center-000.png" id="5_x7cwe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k04n2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fhx6f"]
+texture = ExtResource("5_x7cwe")
+texture_margin_left = 28.0
+texture_margin_top = 28.0
+texture_margin_right = 28.0
+texture_margin_bottom = 28.0
+region_rect = Rect2(-4, -4, 104, 104)
+modulate_color = Color(0.397445, 0.440977, 0.136817, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_420on"]
+texture = ExtResource("5_x7cwe")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+modulate_color = Color(0.270588, 0.301961, 0.0823529, 1)
+
+[node name="ConfirmScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xef82")
+
+[node name="ConfirmCanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="MouseInterceptor" type="Control" parent="ConfirmCanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="ConfirmCanvasLayer/MouseInterceptor"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.169245, 0.169245, 0.169245, 0.627451)
+
+[node name="BG_Box" type="NinePatchRect" parent="ConfirmCanvasLayer"]
+modulate = Color(1, 1, 0.831373, 1)
+custom_minimum_size = Vector2(1200, 1000)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -44.0
+offset_right = 44.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_6ntj1")
+patch_margin_left = 44
+patch_margin_top = 44
+patch_margin_right = 44
+patch_margin_bottom = 44
+
+[node name="MarginContainer" type="MarginContainer" parent="ConfirmCanvasLayer/BG_Box"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = -180
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ConfirmCanvasLayer/BG_Box/MarginContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 65
+alignment = 1
+
+[node name="Category_box" type="VBoxContainer" parent="ConfirmCanvasLayer/BG_Box/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Category" type="Label" parent="ConfirmCanvasLayer/BG_Box/MarginContainer/VBoxContainer/Category_box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.273873, 0.273873, 0.273873, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.196078)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("3_l4j0l")
+theme_override_font_sizes/font_size = 64
+text = "Category"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Japanese" type="Label" parent="ConfirmCanvasLayer/BG_Box/MarginContainer/VBoxContainer/Category_box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.27451, 0.27451, 0.27451, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.196078)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("3_l4j0l")
+theme_override_font_sizes/font_size = 64
+text = "日本語"
+horizontal_alignment = 1
+
+[node name="P1_box" type="HBoxContainer" parent="ConfirmCanvasLayer/BG_Box/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="ConfirmCanvasLayer/BG_Box/MarginContainer/VBoxContainer/P1_box"]
+clip_contents = true
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ConfirmCanvasLayer/BG_Box/MarginContainer/VBoxContainer/P1_box/MarginContainer"]
+clip_contents = true
+layout_mode = 2
+
+[node name="Player1" type="Label" parent="ConfirmCanvasLayer/BG_Box/MarginContainer/VBoxContainer/P1_box/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.156863, 0.156863, 0.156863, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.196078)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("3_a4hw2")
+theme_override_font_sizes/font_size = 64
+text = "Player 1:"
+horizontal_alignment = 1
+
+[node name="Player1Word" type="Label" parent="ConfirmCanvasLayer/BG_Box/MarginContainer/VBoxContainer/P1_box/MarginContainer/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("3_a4hw2")
+theme_override_font_sizes/font_size = 86
+text = "Player 1's Word"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Player1Status" type="TextureRect" parent="ConfirmCanvasLayer/BG_Box/MarginContainer/VBoxContainer/P1_box"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_bwjy5")
+
+[node name="P2_box" type="HBoxContainer" parent="ConfirmCanvasLayer/BG_Box/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ConfirmCanvasLayer/BG_Box/MarginContainer/VBoxContainer/P2_box"]
+clip_contents = true
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ConfirmCanvasLayer/BG_Box/MarginContainer/VBoxContainer/P2_box/MarginContainer"]
+clip_contents = true
+layout_mode = 2
+
+[node name="Player2" type="Label" parent="ConfirmCanvasLayer/BG_Box/MarginContainer/VBoxContainer/P2_box/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.156863, 0.156863, 0.156863, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.196078)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("3_a4hw2")
+theme_override_font_sizes/font_size = 64
+text = "Player 2:"
+horizontal_alignment = 1
+
+[node name="Player2Word" type="Label" parent="ConfirmCanvasLayer/BG_Box/MarginContainer/VBoxContainer/P2_box/MarginContainer/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("3_a4hw2")
+theme_override_font_sizes/font_size = 86
+text = "Player 2's Word"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Player2Status" type="TextureRect" parent="ConfirmCanvasLayer/BG_Box/MarginContainer/VBoxContainer/P2_box"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_nj64v")
+
+[node name="DoneButton" type="Button" parent="ConfirmCanvasLayer/BG_Box/MarginContainer"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+mouse_default_cursor_shape = 2
+theme_override_colors/font_outline_color = Color(0.113105, 0.129315, 0.0197091, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("5_2yp5o")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k04n2")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_fhx6f")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fhx6f")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fhx6f")
+theme_override_styles/normal = SubResource("StyleBoxTexture_420on")
+text = "DONE"
+
+[connection signal="pressed" from="ConfirmCanvasLayer/BG_Box/MarginContainer/DoneButton" to="." method="_on_done_button_pressed"]
